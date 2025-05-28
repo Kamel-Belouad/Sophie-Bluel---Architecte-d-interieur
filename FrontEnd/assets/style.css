@@ -335,4 +335,29 @@ footer nav ul {
   margin: 0;
   margin-right: 107px; 
 }
+/* login footer */
 
+.login{
+  margin-top: 60px;
+}
+.page-login-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  background-color: white; /*  */
+}
+
+.page-login-footer nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding: 0 100px;
+ 
+}
+
+.page-login-footer nav ul li {
+  font-size: 14px;
+}
