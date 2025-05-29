@@ -324,6 +324,13 @@ input[type="submit"] {
 	display: none;
 	color: crimson;
 }
+#authLink {  
+  color:black;
+}
+#authLink.login {
+  font-weight: bold;
+  color:black;
+}
 
 
 footer {

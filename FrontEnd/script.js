@@ -1,4 +1,4 @@
-// Fonction pour récupérer les œuvres depuis le backend
+// Fonction pour récupérer les œuvres depuis le backend (version robuste)
 async function fetchWorks() {
   try {
     const response = await fetch("http://localhost:5678/api/works");
@@ -8,6 +8,7 @@ async function fetchWorks() {
     return await response.json();
   } catch (error) {
     console.error("Erreur lors de la récupération des œuvres:", error);
+    return []; // <-- important pour que la modale ne plante pas
   }
 }
 
@@ -31,6 +32,7 @@ async function loadCategories() {
     const categories = await fetchCategories();
 
     const categoryFilters = document.getElementById("categoryFilters");
+    const categorySelect = document.getElementById("categorySelection");
 
     // Boutons filtres
     categories.forEach((category) => {
@@ -90,3 +92,23 @@ document
   });
 loadCategories();
 loadGallery();
+
+function checkUserAuth() {
+  const authLink = document.getElementById("authLink");
+  const token = sessionStorage.getItem("token"); //  token du session storage
+
+  if (token) {
+    authLink.textContent = "logout"; // Affiche "logout"
+    authLink.onclick = logout;
+    document.querySelector(".filters").style.display = "none";
+  } else {
+    authLink.textContent = "login"; // Affiche "login" si l'utilisateur n'est pas connecté
+    authLink.onclick = () => (window.location.href = "login.html"); // Rediriger vers la page de login
+  }
+}
+function logout(event) {
+  event.preventDefault();
+  sessionStorage.removeItem("token"); // Supprime le token du sessionStorage
+  window.location.href = "index.html"; // Redirige l'utilisateur vers la page d'accueil
+}
+checkUserAuth();
