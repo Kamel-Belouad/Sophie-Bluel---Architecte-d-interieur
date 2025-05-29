@@ -31,7 +31,6 @@ async function loadCategories() {
     const categories = await fetchCategories();
 
     const categoryFilters = document.getElementById("categoryFilters");
-    const categorySelect = document.getElementById("categorySelection");
 
     // Boutons filtres
     categories.forEach((category) => {
@@ -50,7 +49,6 @@ async function loadCategories() {
       const option = document.createElement("option");
       option.value = category.id;
       option.textContent = category.name;
-      categorySelect.appendChild(option);
     });
   } catch (error) {
     console.error("Erreur lors du chargement des catégories:", error);
