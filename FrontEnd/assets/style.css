@@ -317,6 +317,13 @@ input[type="submit"] {
   box-sizing: border-box;
   display: block;
 }
+.underline {
+  text-decoration: underline;
+}
+.error {
+	display: none;
+	color: crimson;
+}
 
 
 footer {
