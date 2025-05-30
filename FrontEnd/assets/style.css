@@ -238,7 +238,14 @@ nav li {
   color: #fff;
 }
 
+/* Admin mode */
+#introduction figure .modifier {
+  margin-left: 4em;
+}
 
+.portfolio {
+  position: relative;
+}
 .projets-container {
   display: flex;
   align-items: center;
@@ -248,7 +255,29 @@ nav li {
   margin-bottom: 5em;
 }
 
+.projets {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
 
+  margin: 0;
+}
+/* Bloc contenant icône et texte */
+.modifier-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  font-family: "Work Sans";
+  font-size: 14px;
+  cursor: pointer;
+  color: #000;
+ 
+}
+
+.modifier-block i {
+  font-size: 18px;
+  line-height: 1;
+}
 .gallery {
   width: 100%;
   display: grid;

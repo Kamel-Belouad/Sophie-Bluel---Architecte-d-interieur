@@ -32,7 +32,6 @@ async function loadCategories() {
     const categories = await fetchCategories();
 
     const categoryFilters = document.getElementById("categoryFilters");
-    const categorySelect = document.getElementById("categorySelection");
 
     // Boutons filtres
     categories.forEach((category) => {
@@ -110,6 +109,15 @@ function checkUserAuth() {
     body.insertAdjacentElement("afterbegin", editBar);
     editBar.append(modalMode);
     document.body.style.paddingTop = editBar.offsetHeight + "px";
+    const modifier = `
+  <div class="modifier-block">
+    <i class="fa-regular fa-pen-to-square"></i>
+    <span>Modifier</span>
+  </div>
+`;
+    document
+      .querySelector(".projets-container")
+      .insertAdjacentHTML("beforeend", modifier);
   } else {
     authLink.textContent = "login"; // Affiche "login" si l'utilisateur n'est pas connecté
     authLink.onclick = () => (window.location.href = "login.html"); // Rediriger vers la page de login
