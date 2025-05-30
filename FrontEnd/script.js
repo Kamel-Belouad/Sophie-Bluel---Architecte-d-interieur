@@ -101,6 +101,15 @@ function checkUserAuth() {
     authLink.textContent = "logout"; // Affiche "logout"
     authLink.onclick = logout;
     document.querySelector(".filters").style.display = "none";
+    const body = document.querySelector("body");
+    const editBar = document.createElement("div");
+    const modalMode = document.createElement("p");
+    editBar.className = "editBar";
+    modalMode.className = "modal-mode";
+    modalMode.innerHTML = `<i class="fa-regular fa-pen-to-square"></i><span>Mode édition</span>`;
+    body.insertAdjacentElement("afterbegin", editBar);
+    editBar.append(modalMode);
+    document.body.style.paddingTop = editBar.offsetHeight + "px";
   } else {
     authLink.textContent = "login"; // Affiche "login" si l'utilisateur n'est pas connecté
     authLink.onclick = () => (window.location.href = "login.html"); // Rediriger vers la page de login
