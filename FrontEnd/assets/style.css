@@ -310,6 +310,107 @@ nav li {
   display: flex;
   align-items: center;
 }
+/* --- MODALE GALERIE PHOTO --- */
+.containerModal {
+  display: none; /* Masquée par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.modalWindow {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 60px 20px 60px;  /* Ajuste le padding pour que ça laisse plus d'espace pour les éléments */
+  width: 100%;
+  max-width: 630px; /* Réduit la largeur max de la fenêtre */
+  height: auto; /* Laisser l'hauteur s'ajuster en fonction du contenu */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+
+.modalHeader i {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+
+
+
+.modalTitle {
+font-weight: 400;
+font-size: 26px;
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+margin-bottom: 60px;
+margin-top: 30px;
+}
+
+.modalContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 10px;  /* Espace uniquement entre les colonnes */
+  row-gap: 30px; /* Espace uniquement entre les lignes, si nécessaire */
+  margin-bottom: 30px;
+  padding-left: 30px;  /* Réduit le padding à gauche */
+  padding-right: 30px; /* Réduit le padding à droite */
+  box-sizing: border-box; /* Assure que le padding ne déborde pas */
+}
+
+
+.modalContent figure {
+  position: relative;
+}
+
+.modalContent img {
+  width: 100%;
+  height: auto;
+  
+}
+
+.modalContent .fa-trash-can {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  background-color: black;
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.addPictureBtn {
+  padding: 10px 80px;
+  background-color: #1d6154;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  max-width: 100%; /* S'assurer que le bouton ne dépasse pas la largeur de son conteneur */
+  width: auto; /* Ajuste la taille du bouton automatiquement */
+  margin-top: 20px; /* Ajoute un peu d'espace au-dessus du bouton */
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Inclut le padding dans la largeur du bouton */
+}
+
 #contact {
   width: 50%;                   
   margin: 0 auto;                

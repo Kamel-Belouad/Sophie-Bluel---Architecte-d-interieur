@@ -32,7 +32,6 @@ async function loadCategories() {
     const categories = await fetchCategories();
 
     const categoryFilters = document.getElementById("categoryFilters");
-    const categorySelect = document.getElementById("categorySelection");
 
     // Boutons filtres
     categories.forEach((category) => {
@@ -110,6 +109,15 @@ function checkUserAuth() {
     body.insertAdjacentElement("afterbegin", editBar);
     editBar.append(modalMode);
     document.body.style.paddingTop = editBar.offsetHeight + "px";
+    const modifier = `
+  <div class="modifier-block">
+    <i class="fa-regular fa-pen-to-square"></i>
+    <span>Modifier</span>
+  </div>
+`;
+    document
+      .querySelector(".projets-container")
+      .insertAdjacentHTML("beforeend", modifier);
   } else {
     authLink.textContent = "login"; // Affiche "login" si l'utilisateur n'est pas connecté
     authLink.onclick = () => (window.location.href = "login.html"); // Rediriger vers la page de login
@@ -121,3 +129,22 @@ function logout(event) {
   window.location.href = "index.html"; // Redirige l'utilisateur vers la page d'accueil
 }
 checkUserAuth();
+async function displayModalContent() {
+  const modalContent = document.querySelector(".modalContent");
+  modalContent.innerHTML = "";
+  const works = await fetchWorks();
+  works.forEach((work) => {
+    const figure = document.createElement("figure");
+    const img = document.createElement("img");
+    const span = document.createElement("span");
+    const trash = document.createElement("i");
+    trash.classList.add("fa-solid", "fa-trash-can");
+    trash.id = work.id;
+    img.src = work.imageUrl;
+    span.appendChild(trash);
+    figure.appendChild(span);
+    figure.appendChild(img);
+    modalContent.appendChild(figure);
+  });
+}
+displayModalContent();
