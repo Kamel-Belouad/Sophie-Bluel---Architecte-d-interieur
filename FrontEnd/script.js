@@ -148,3 +148,14 @@ async function displayModalContent() {
   });
 }
 displayModalContent();
+document.getElementById("closeGallery")?.addEventListener("click", () => {
+  document.getElementById("photoGallery").style.display = "none";
+});
+// Fermeture en cliquant en dehors de la fenêtre modale
+document.getElementById("photoGallery").addEventListener("click", (event) => {
+  const modalWindow = document.querySelector("#photoGallery .modalWindow");
+
+  if (!modalWindow.contains(event.target)) {
+    document.getElementById("photoGallery").style.display = "none";
+  }
+});
