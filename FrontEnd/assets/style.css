@@ -239,6 +239,15 @@ nav li {
 }
 
 
+/* Admin mode */
+#introduction figure .modifier {
+  margin-left: 4em;
+}
+
+.portfolio {
+  position: relative;
+}
+
 .projets-container {
   display: flex;
   align-items: center;
@@ -248,6 +257,30 @@ nav li {
   margin-bottom: 5em;
 }
 
+.projets {
+  font-family: "Syne";
+  font-weight: 700;
+  font-size: 30px;
+
+  margin: 0;
+}
+
+/* Bloc contenant icône et texte */
+.modifier-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  font-family: "Work Sans";
+  font-size: 14px;
+  cursor: pointer;
+  color: #000;
+ 
+}
+
+.modifier-block i {
+  font-size: 18px;
+  line-height: 1;
+}
 
 .gallery {
   width: 100%;
@@ -409,6 +442,13 @@ margin-top: 30px;
   margin-top: 20px; /* Ajoute un peu d'espace au-dessus du bouton */
   margin-bottom: 20px;
   box-sizing: border-box; /* Inclut le padding dans la largeur du bouton */
+}
+
+.greyline {
+  width: 420px;
+  height: 1px;
+  background-color:#B3B3B3;
+  margin: 30px 0 10px 0;
 }
 
 #contact {

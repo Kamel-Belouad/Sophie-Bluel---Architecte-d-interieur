@@ -99,18 +99,19 @@ function checkUserAuth() {
   if (token) {
     authLink.textContent = "logout"; // Affiche "logout"
     authLink.onclick = logout;
-    document.querySelector(".filters").style.display = "none";
     const body = document.querySelector("body");
     const editBar = document.createElement("div");
     const modalMode = document.createElement("p");
     editBar.className = "editBar";
     modalMode.className = "modal-mode";
     modalMode.innerHTML = `<i class="fa-regular fa-pen-to-square"></i><span>Mode édition</span>`;
+
     body.insertAdjacentElement("afterbegin", editBar);
+
     editBar.append(modalMode);
     document.body.style.paddingTop = editBar.offsetHeight + "px";
     const modifier = `
-  <div class="modifier-block">
+  <div class="modifier-block" id="openModalBtn">
     <i class="fa-regular fa-pen-to-square"></i>
     <span>Modifier</span>
   </div>
@@ -118,6 +119,13 @@ function checkUserAuth() {
     document
       .querySelector(".projets-container")
       .insertAdjacentHTML("beforeend", modifier);
+    const openModalBtn = document.getElementById("openModalBtn");
+
+    if (openModalBtn) {
+      openModalBtn.addEventListener("click", () => {
+        document.getElementById("photoGallery").style.display = "flex";
+      });
+    }
   } else {
     authLink.textContent = "login"; // Affiche "login" si l'utilisateur n'est pas connecté
     authLink.onclick = () => (window.location.href = "login.html"); // Rediriger vers la page de login
@@ -148,6 +156,7 @@ async function displayModalContent() {
   });
 }
 displayModalContent();
+// Fermeture en cliquant x de la fenêtre modale
 document.getElementById("closeGallery")?.addEventListener("click", () => {
   document.getElementById("photoGallery").style.display = "none";
 });
