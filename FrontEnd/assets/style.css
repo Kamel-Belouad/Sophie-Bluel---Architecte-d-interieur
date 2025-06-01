@@ -450,7 +450,207 @@ margin-top: 30px;
   background-color:#B3B3B3;
   margin: 30px 0 10px 0;
 }
+/* --- MODALE AJOUT PHOTO --- */
 
+.modal {
+  display: none; /* Masquée par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.window {
+  width: 600px;
+  height: 620px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* HEADER : fleche + croix */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 30px 0 30px;
+  font-size: 20px;
+}
+
+
+/* TITRE centré comme modalTitle */
+.title {
+  text-align: center;
+  font-size: 22px;
+  margin: 20px 0;
+  font-weight: normal; /* Pas de gras */
+}
+
+/* FORMULAIRE */
+.addImage form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 60px 40px 60px;
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* BLOC PHOTO */
+.addPhoto {
+  width: 420px; /* Largeur du conteneur */
+  height: 169px; /* Hauteur du conteneur */
+  background-color: #e8f1f6;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Positionner l'image dans le conteneur */
+  box-sizing: border-box; /* S'assurer que le padding ne dépasse pas la largeur */
+}
+
+
+.addPhoto i {
+  font-size: 76px;
+  color: #b9c5cc;
+}
+
+#add {
+  width: 173px;
+  height: 36px;
+  background-color: #cbd6dc;
+  color: #306685;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 36px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.addPhoto p {
+  font-size: 10px;
+  color: #444;
+  margin-top: 8px;
+  font-weight: normal; /* Pas de gras */
+}
+
+.addPhoto input[type="file"] {
+  display: none;
+}
+
+/* Image par défaut cachée */
+.addPhoto img {
+  display: block;  /* Assurer que l'image est bien visible */
+  width: 129px;     /* Fixer la largeur de l'image à 129px */
+  height: 169px;    /* Fixer la hauteur de l'image à 169px */
+  object-fit: cover; /* L'image va couvrir l'espace sans être déformée */
+  position: absolute; /* Positionner l'image dans le conteneur */
+  top: 50%;  /* Centrer verticalement */
+  left: 50%; /* Centrer horizontalement */
+  transform: translate(-50%, -50%); /* Ajuste pour centrer correctement l'image */
+}
+
+
+
+
+
+
+
+/* Quand une image est sélectionnée, cacher l'icône et afficher l'image */
+.addPhoto.has-image i,
+.addPhoto.has-image #add {
+  display: none;
+}
+
+.addPhoto.has-image img {
+  display: block; /* Affiche l'image */
+}
+
+/* INPUTS */
+.input label,
+.choose label {
+  margin-bottom: 5px;
+  display: block;
+  font-weight: normal; /* Pas de gras */
+}
+
+#title,
+#categorySelection {
+  width: 420px;
+  height: 51px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.greyline {
+  width: 420px;
+  height: 1px;
+  background-color:#B3B3B3;
+  margin: 30px 0 10px 0;
+}
+
+/* BOUTON VALIDER */
+#valider {
+  width: 237px;
+  height: 36px;
+  background-color: #a7a7a7;
+  color: white;
+  border-radius: 60px;
+  border: none;
+  font-family: "Syne", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: not-allowed;
+  margin: 0 auto;
+  
+}
+
+#valider.active {
+  background-color: #1d6154;
+  cursor: pointer;
+}
+
+
+/* login footer */
+.error {
+	display: none;
+	color: crimson;
+}
+.login{
+  margin-top: 60px;
+}
+.page-login-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  background-color: white; /*  */
+}
+
+.page-login-footer nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding: 0 100px;
+ 
+}
 #contact {
   width: 50%;                   
   margin: 0 auto;                

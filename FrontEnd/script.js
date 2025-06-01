@@ -136,7 +136,7 @@ function logout(event) {
   sessionStorage.removeItem("token"); // Supprime le token du sessionStorage
   window.location.href = "index.html"; // Redirige l'utilisateur vers la page d'accueil
 }
-checkUserAuth();
+
 async function displayModalContent() {
   const modalContent = document.querySelector(".modalContent");
   modalContent.innerHTML = "";
@@ -156,6 +156,7 @@ async function displayModalContent() {
   });
 }
 displayModalContent();
+
 // Fermeture en cliquant x de la fenêtre modale
 document.getElementById("closeGallery")?.addEventListener("click", () => {
   document.getElementById("photoGallery").style.display = "none";
@@ -168,3 +169,50 @@ document.getElementById("photoGallery").addEventListener("click", (event) => {
     document.getElementById("photoGallery").style.display = "none";
   }
 });
+
+document.getElementById("openAddForm")?.addEventListener("click", () => {
+  document.getElementById("photoGallery").style.display = "none";
+  document.getElementById("addPhotoModal").style.display = "flex";
+});
+document.getElementById("backToGallery")?.addEventListener("click", () => {
+  document.getElementById("addPhotoModal").style.display = "none";
+  document.getElementById("photoGallery").style.display = "flex";
+});
+document.getElementById("closeAddForm")?.addEventListener("click", () => {
+  document.getElementById("addPhotoModal").style.display = "none";
+});
+
+function closeModalOnClickOutside() {
+  const addPhotoModal = document.getElementById("addPhotoModal");
+
+  // Fermer la modale "ajout photo" si l'utilisateur clique en dehors de la fenêtre modale
+  addPhotoModal?.addEventListener("click", (event) => {
+    const modalWindow = addPhotoModal.querySelector(".window");
+
+    // Si le clic est en dehors de la fenêtre interne de la modale
+    if (!modalWindow.contains(event.target)) {
+      addPhotoModal.style.display = "none"; // Ferme la modale
+    }
+  });
+}
+
+window.onload = () => {
+  checkUserAuth();
+
+  // Fermer les modales au chargement de la page
+  const addPhotoModal = document.getElementById("addPhotoModal");
+
+  if (addPhotoModal) addPhotoModal.style.display = "none";
+  closeModalOnClickOutside();
+
+  const galleryOpened = sessionStorage.getItem("galleryOpened");
+
+  if (galleryOpened === "true") {
+    // Afficher la galerie
+    document.getElementById("photoGallery").style.display = "flex";
+
+    sessionStorage.removeItem("galleryOpened");
+  } else {
+    document.getElementById("photoGallery").style.display = "none";
+  }
+};

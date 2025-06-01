@@ -91,6 +91,40 @@
 	</div>
   </div>
 
+   <div class="modal" id="addPhotoModal">
+	<div class="window">
+	  <div class="header">
+		<i class="fa-solid fa-arrow-left" id="backToGallery"></i>
+		<i class="fa-solid fa-xmark" id="closeAddForm"></i>
+	  </div>
+	  <h3 class="title">Ajout photo</h3>
+	  <div class="addImage">
+		<form>
+		  <div class="addPhoto">
+			<span><i class="fa-regular fa-image"></i></span>
+			<label for="file" id="add">+ Ajouter une photo</label>
+			<input type="file" name="imageUrl" id="file" style="display: none;">
+			<img id="preview" src="#" alt="Aperçu de l'image" style="display: none;">
+			<p>jpg, png : 4mo max</p>
+		  </div>
+		  <div class="input">
+			<label for="title">Titre</label>
+			<input type="text" name="title" id="title">
+		  </div>
+		  <div class="choose">
+			<label for="categorySelection">Catégorie</label>
+			<select id="categorySelection" name="categorySelection">
+			  <option value="" selected></option>
+			  <!-- Ex: <option value="1">Objets</option> -->
+			</select>
+		  </div>
+		  <div class="greyline"></div>
+		  <input type="submit" value="Valider" id="valider" disabled>
+		</form>
+	  </div>
+	</div>
+  </div>
+  
 	
   
   
