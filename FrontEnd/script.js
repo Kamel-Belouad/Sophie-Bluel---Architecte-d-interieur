@@ -199,12 +199,6 @@ function closeModalOnClickOutside() {
 window.onload = () => {
   checkUserAuth();
 
-  // Fermer les modales au chargement de la page
-  const addPhotoModal = document.getElementById("addPhotoModal");
-
-  if (addPhotoModal) addPhotoModal.style.display = "none";
-  closeModalOnClickOutside();
-
   const galleryOpened = sessionStorage.getItem("galleryOpened");
 
   if (galleryOpened === "true") {
