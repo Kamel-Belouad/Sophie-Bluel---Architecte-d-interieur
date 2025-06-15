@@ -139,7 +139,6 @@ body {
   font-family: "Work Sans";
   font-size: 14px;
   background-color: #fffef8;
- 
 }
 header {
   display: flex;
@@ -179,10 +178,7 @@ nav ul {
 nav li {
   padding: 0 20px;
   font-size: 1.2em;
-
 }
-
-
 
 #introduction {
   display: flex;
@@ -238,7 +234,6 @@ nav li {
   color: #fff;
 }
 
-
 /* Admin mode */
 #introduction figure .modifier {
   margin-left: 4em;
@@ -274,7 +269,6 @@ nav li {
   font-size: 14px;
   cursor: pointer;
   color: #000;
- 
 }
 
 .modifier-block i {
@@ -361,7 +355,7 @@ nav li {
 .modalWindow {
   background-color: white;
   border-radius: 10px;
-  padding: 40px 60px 20px 60px;  /* Ajuste le padding pour que ça laisse plus d'espace pour les éléments */
+  padding: 40px 60px 20px 60px; /* Ajuste le padding pour que ça laisse plus d'espace pour les éléments */
   width: 100%;
   max-width: 630px; /* Réduit la largeur max de la fenêtre */
   height: auto; /* Laisser l'hauteur s'ajuster en fonction du contenu */
@@ -372,7 +366,6 @@ nav li {
   box-sizing: border-box; /* Inclut le padding dans la largeur */
 }
 
-
 .modalHeader i {
   position: absolute;
   top: 30px;
@@ -381,31 +374,27 @@ nav li {
   cursor: pointer;
 }
 
-
-
-
 .modalTitle {
-font-weight: 400;
-font-size: 26px;
-line-height: 100%;
-letter-spacing: 0%;
-text-align: center;
-margin-bottom: 60px;
-margin-top: 30px;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 .modalContent {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  column-gap: 10px;  /* Espace uniquement entre les colonnes */
+  column-gap: 10px; /* Espace uniquement entre les colonnes */
   row-gap: 30px; /* Espace uniquement entre les lignes, si nécessaire */
   margin-bottom: 30px;
-  padding-left: 30px;  /* Réduit le padding à gauche */
+  padding-left: 30px; /* Réduit le padding à gauche */
   padding-right: 30px; /* Réduit le padding à droite */
   box-sizing: border-box; /* Assure que le padding ne déborde pas */
 }
-
 
 .modalContent figure {
   position: relative;
@@ -414,7 +403,6 @@ margin-top: 30px;
 .modalContent img {
   width: 100%;
   height: auto;
-  
 }
 
 .modalContent .fa-trash-can {
@@ -447,7 +435,7 @@ margin-top: 30px;
 .greyline {
   width: 420px;
   height: 1px;
-  background-color:#B3B3B3;
+  background-color: #b3b3b3;
   margin: 30px 0 10px 0;
 }
 /* --- MODALE AJOUT PHOTO --- */
@@ -488,7 +476,6 @@ margin-top: 30px;
   font-size: 20px;
 }
 
-
 /* TITRE centré comme modalTitle */
 .title {
   text-align: center;
@@ -522,7 +509,6 @@ margin-top: 30px;
   box-sizing: border-box; /* S'assurer que le padding ne dépasse pas la largeur */
 }
 
-
 .addPhoto i {
   font-size: 76px;
   color: #b9c5cc;
@@ -553,21 +539,18 @@ margin-top: 30px;
 
 /* Image par défaut cachée */
 .addPhoto img {
-  display: block;  /* Assurer que l'image est bien visible */
-  width: 129px;     /* Fixer la largeur de l'image à 129px */
-  height: 169px;    /* Fixer la hauteur de l'image à 169px */
+  display: block; /* Assurer que l'image est bien visible */
+  width: 129px; /* Fixer la largeur de l'image à 129px */
+  height: 169px; /* Fixer la hauteur de l'image à 169px */
   object-fit: cover; /* L'image va couvrir l'espace sans être déformée */
   position: absolute; /* Positionner l'image dans le conteneur */
-  top: 50%;  /* Centrer verticalement */
+  top: 50%; /* Centrer verticalement */
   left: 50%; /* Centrer horizontalement */
-  transform: translate(-50%, -50%); /* Ajuste pour centrer correctement l'image */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Ajuste pour centrer correctement l'image */
 }
-
-
-
-
-
-
 
 /* Quand une image est sélectionnée, cacher l'icône et afficher l'image */
 .addPhoto.has-image i,
@@ -600,7 +583,7 @@ margin-top: 30px;
 .greyline {
   width: 420px;
   height: 1px;
-  background-color:#B3B3B3;
+  background-color: #b3b3b3;
   margin: 30px 0 10px 0;
 }
 
@@ -617,7 +600,6 @@ margin-top: 30px;
   font-size: 14px;
   cursor: not-allowed;
   margin: 0 auto;
-  
 }
 
 #valider.active {
@@ -625,13 +607,12 @@ margin-top: 30px;
   cursor: pointer;
 }
 
-
 /* login footer */
 .error {
-	display: none;
-	color: crimson;
+  display: none;
+  color: crimson;
 }
-.login{
+.login {
   margin-top: 60px;
 }
 .page-login-footer {
@@ -649,16 +630,14 @@ margin-top: 30px;
   margin: 0;
   padding: 0;
   padding: 0 100px;
- 
 }
 #contact {
-  width: 50%;                   
-  margin: 0 auto;                
+  width: 50%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;           
-  justify-content: center;      
-             
+  align-items: center;
+  justify-content: center;
 }
 
 #contact > * {
@@ -675,11 +654,11 @@ margin-top: 30px;
 }
 
 #contact input {
-  width: 379px;                       
-  height: 51px;                       
-  font-size: 1.2em;                    
-  border: none;                        
-  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09); 
+  width: 379px;
+  height: 51px;
+  font-size: 1.2em;
+  border: none;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
 #contact label {
@@ -701,8 +680,8 @@ input[type="submit"] {
   margin: 2em auto;
   padding: 0;
   border: none;
-  width: 179px !important;  
-  height: 36px !important; 
+  width: 179px !important;
+  height: 36px !important;
   text-align: center;
   border-radius: 60px;
   box-sizing: border-box;
@@ -712,17 +691,16 @@ input[type="submit"] {
   text-decoration: underline;
 }
 .error {
-	display: none;
-	color: crimson;
+  display: none;
+  color: crimson;
 }
-#authLink {  
-  color:black;
+#authLink {
+  color: black;
 }
 #authLink.login {
   font-weight: bold;
-  color:black;
+  color: black;
 }
-
 
 footer {
   background-color: white;
@@ -730,19 +708,19 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding: 0 20px; 
+  padding: 0 20px;
 }
 
 footer nav ul {
   display: flex;
-  align-items: center; 
-  padding: 0; 
+  align-items: center;
+  padding: 0;
   margin: 0;
-  margin-right: 107px; 
+  margin-right: 107px;
 }
 /* login footer */
 
-.login{
+.login {
   margin-top: 60px;
 }
 .page-login-footer {
@@ -760,7 +738,6 @@ footer nav ul {
   margin: 0;
   padding: 0;
   padding: 0 100px;
- 
 }
 
 .page-login-footer nav ul li {
