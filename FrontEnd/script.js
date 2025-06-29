@@ -127,6 +127,7 @@ function checkUserAuth() {
         document.getElementById("photoGallery").style.display = "flex";
       });
     }
+    document.querySelector(".filters").style.display = "none";
   } else {
     authLink.textContent = "login"; // Affiche "login" si l'utilisateur n'est pas connecté
     authLink.onclick = () => (window.location.href = "login.html"); // Rediriger vers la page de login
